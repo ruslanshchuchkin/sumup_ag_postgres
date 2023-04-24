@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: 1_top_stores
+    description: This table contains top 10 stores per transacted amout.
+    columns:
+      - name: store_id
+        description: Unique identifier for each store.
+        tests:
+          - not_null
+  - name: 2_top_products
+    description: This table contains top 10 products sold (assume in number of units).
+    columns:
+      - name: product_sku
+        description: Identifier for each product.
+        tests:
+          - not_null
+  - name: 3_amount_per_typo_country
+    description: This table contains average transacted amount per typology and country.
+    columns:
+      - name: typology
+        description: Typology of the store.
+        tests:
+          - not_null
+      - name: country
+        description: Country of the store.
+        tests:
+          - not_null
+  - name: 4_trans_per_device_type
+    description: This table contains average transacted amount per typology and country.
+    columns:
+      - name: device_type
+        description: Type of the device.
+        tests:
+          - not_null
+  - name: 5_time_to_5_trans
+    description: This table contains average time in hours for the store to create first 5 transactions.
+    columns:
+      - name: avg_to_5_trans_in_hours
+        description: Time in hours, rounded to 2 decimal points.
+        tests:
+          - not_null

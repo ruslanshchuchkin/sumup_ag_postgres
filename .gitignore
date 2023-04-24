@@ -1,0 +1,10 @@
+
+target/
+dbt_packages/
+logs/
+analyses/
+data/
+
+env/
+
+.DS_Store

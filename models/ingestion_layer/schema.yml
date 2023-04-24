@@ -1,0 +1,115 @@
+version: 2
+
+models:
+  - name: fct_transactions
+    description: This table contains transaction data.
+    columns:
+      - name: id
+        description: Unique identifier for each transaction.
+        tests:
+          - unique
+          - not_null
+      - name: store_id
+        description: The ID of the store where the transaction was run.
+        tests:
+          - not_null
+      - name: device_id
+        description: The ID of the device that run the transaction.
+        tests:
+          - not_null
+      - name: product_sku
+        description: The ID of product purchased with transaction.
+        tests:
+          - not_null
+      - name: amount
+        description: The monetary amount of the transaction.
+        tests:
+          - not_null
+      - name: status
+        description: The status of the transaction.
+        tests:
+          - accepted_values:
+              values: ['accepted', 'refused', 'cancelled']
+      - name: card_number
+        description: The number of the card.
+        tests:
+          - not_null
+      - name: cvv
+        description: The cvv of the card.
+        tests:
+          - not_null
+      - name: created_at
+        description: Timestamp of when transaction was created.
+        tests:
+          - not_null
+      - name: happened_at
+        description: Timestamp of when transaction actually happened. Should be later than created_at
+        tests:
+          - not_null
+
+  - name: dim_stores
+    description: This table contains information about stores.
+    columns:
+      - name: id
+        description: Unique identifier for each store.
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: Identifier for each customer.
+        tests:
+          - not_null
+      - name: name
+        description: The name of the store.
+        tests:
+          - not_null
+      - name: address
+        description: The address of the store.
+        tests:
+          - not_null
+      - name: city
+        description: The city address of the store.
+        tests:
+          - not_null
+      - name: country
+        description: The country address of the store.
+        tests:
+          - not_null
+      - name: typology
+        description: The typology of the store.
+        tests:
+          - not_null
+      - name: created_at
+        description: The timestamp when the store was created.
+        tests:
+          - not_null
+
+  - name: dim_devices
+    description: This table contains information about devices.
+    columns:
+      - name: id
+        description: Unique identifier for each device.
+        tests:
+          - unique
+          - not_null
+      - name: type
+        description: The type of the device.
+        tests:
+          - not_null
+
+  - name: dim_products
+    description: This table contains the information about product.
+    columns:
+      - name: sku
+        description: Description unique SKU of the product.
+        tests:
+          - unique
+          - not_null
+      - name: product_name_1
+        description: First name of the product.
+        tests:
+          - not_null
+      - name: product_name_2
+        description: Second name of the product.
+        tests:
+          - not_null
