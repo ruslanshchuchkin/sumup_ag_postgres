@@ -48,6 +48,14 @@ Activate the environment:
 
     source env/bin/activate
 
+Connect to Postgres DB:
+
+[Link](https://docs.getdbt.com/reference/warehouse-setups/postgres-setup)
+
 Run the pipeline:
 
     dbt run
+
+
+# *4. Results:
+![Final pipeline run](pipeline_run.png)
