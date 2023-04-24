@@ -1,4 +1,4 @@
-# Sum Up Takehome Assignment - Analytics Enginner
+# SumUp Take Home Test - Analytics Enginner
 
 # Outline:
 1. Solution high level description
@@ -35,7 +35,7 @@ I have skipped this step because of the time constraints, but Airflow would be a
 
 # 2. Data model
 
-Here's the ER diagram for Ingesion layer:
+Here's the ER diagram for Ingestion layer:
 ![ER Diagram](ER_diagram.png)
 
 # 3. Installation instructions
